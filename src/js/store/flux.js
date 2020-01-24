@@ -6,7 +6,7 @@ const getState = ({ getStore, setStore }) => {
 		},
 		actions: {
 			GetContactList: () => {
-				fetch("https://3000-f360355a-a143-4167-83ae-554ca4b7df40.ws-us02.gitpod.io/get")
+				fetch("https://3000-b6b52ce1-5446-4cff-a87b-f7838258bc81.ws-us02.gitpod.io/get")
 					.then(resp => {
 						return resp.json();
 					})
@@ -15,14 +15,14 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			CreateContactList: stateAdd => {
-				fetch("https://3000-f360355a-a143-4167-83ae-554ca4b7df40.ws-us02.gitpod.io/create", {
+				fetch("https://3000-b6b52ce1-5446-4cff-a87b-f7838258bc81.ws-us02.gitpod.io/create", {
 					method: "POST",
 					body: JSON.stringify(stateAdd),
 					headers: {
 						"Content-type": "application/json"
 					}
 				}).then(request => {
-					fetch("https://3000-f360355a-a143-4167-83ae-554ca4b7df40.ws-us02.gitpod.io/get")
+					fetch("https://3000-b6b52ce1-5446-4cff-a87b-f7838258bc81.ws-us02.gitpod.io/get")
 						.then(resp => {
 							return resp.json();
 						})
@@ -32,14 +32,14 @@ const getState = ({ getStore, setStore }) => {
 				});
 			},
 			UpdateContactList: (stateAdd, id) => {
-				fetch("https://3000-f360355a-a143-4167-83ae-554ca4b7df40.ws-us02.gitpod.io/update" + id, {
+				fetch("https://3000-b6b52ce1-5446-4cff-a87b-f7838258bc81.ws-us02.gitpod.io/update/" + id, {
 					method: "PUT",
 					body: JSON.stringify(stateAdd),
 					headers: {
 						"Content-type": "application/json"
 					}
 				}).then(request => {
-					fetch("https://3000-f360355a-a143-4167-83ae-554ca4b7df40.ws-us02.gitpod.io/get")
+					fetch("https://3000-b6b52ce1-5446-4cff-a87b-f7838258bc81.ws-us02.gitpod.io/get")
 						.then(resp => {
 							return resp.json();
 						})
@@ -49,13 +49,13 @@ const getState = ({ getStore, setStore }) => {
 				});
 			},
 			DeleteContactList: id => {
-				fetch("https://3000-f360355a-a143-4167-83ae-554ca4b7df40.ws-us02.gitpod.io/delete" + id, {
+				fetch("https://3000-b6b52ce1-5446-4cff-a87b-f7838258bc81.ws-us02.gitpod.io/delete/" + id, {
 					method: "DELETE",
 					headers: {
 						"Content-type": "application/json"
 					}
 				}).then(request => {
-					fetch("https://3000-f360355a-a143-4167-83ae-554ca4b7df40.ws-us02.gitpod.io/get")
+					fetch("https://3000-b6b52ce1-5446-4cff-a87b-f7838258bc81.ws-us02.gitpod.io/get")
 						.then(resp => {
 							return resp.json();
 						})
